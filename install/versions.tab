@@ -1,0 +1,4 @@
+module|version|cobertura|test_pass|mark_as_insec
+backend-plus|3|asdf|TRUE|FALSE
+backend-plus|5|add|FALSE|TRUE
+mod33|1|lkas|TRUE|TRUE
