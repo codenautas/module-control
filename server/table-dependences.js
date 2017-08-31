@@ -16,12 +16,11 @@ module.exports = function (context) {
         ],
         primaryKey: ['source_module', 'source_version', 'dependence_module'],
         foreignKeys: [
-            { references: 'versions', fields: [{source:'source_module',target:'module'}, {source: 'source_version', target:'version'}], alias: 'source'},
-            { references: 'versions', fields: [{source:'dependence_module',target:'module'}, {source: 'dependence_version', target:'version'}], alias: 'dependence' },
+            { references: 'versions', fields: [{ source: 'source_module', target: 'module' }, { source: 'source_version', target: 'version' }], alias: 'source' },
+            { references: 'versions', fields: [{ source: 'dependence_module', target: 'module' }, { source: 'dependence_version', target: 'version' }], alias: 'dependence' },
         ],
-        softForeignKeys:[
-            {references: 'versions', fields:[ {source:'dependence_module',target:'module'}]},
-            
+        softForeignKeys: [
+            { references: 'versions', fields: [{ source: 'dependence_module', target: 'module' }, { source: 'dependence_version', target: 'version' }]},
         ]
     }, context);
 }

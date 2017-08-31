@@ -30,6 +30,7 @@ class AppModuleControl extends backendPlus.AppBackend{
             {menuType:'menu', name:'modules', menuContent:[
                 {menuType:'table', name:'modules', label:'modulos'},
                 {menuType:'table', name:'versions', label:'versiones'},
+                {menuType:'table', name:'dependences', label:'dependencias'},
             ]},
             {menuType:'menu', name:'configuración', menuContent:[
                 {menuType:'table', name:'usuarios'},
