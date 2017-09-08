@@ -24,9 +24,11 @@ module.exports = function (context) {
         ],
         sql: {
             isTable: true,
-            // from: `(select m.*, vv.version, vv.cobertura, vv.test_pass, vv.insecurity_level from modules m, lateral (select v.* from versions v where m.module = v.module order by v.version desc limit 1) vv)`
-            // from: `(select m.* from modules m, lateral (select v.* from versions v where m.module = v.module order by v.version desc limit 1) vv)`
-            from: `(select * from modules m left join (select distinct on (v.module) v.version, v.module version_module, v.cobertura, v.test_pass, v.insecurity_level from versions v order by v.module, string_to_array(v.version,'.')::int[] desc) v on (m.module = v.version_module))`
+            from: `(select * from modules m left join (select distinct on (v.module) v.version, v.module version_module, v.cobertura, v.test_pass, v.insecurity_level from versions v order by v.module, string_to_array(regexp_replace(v.version, '[a-zA-Z]', '', 'gi'), '.','')::int[] desc) v on (m.module = v.version_module))`
+            //  string_to_array(regexp_replace(v.version, '[a-zA-Z]', '', 'gi'), '.','')::int[]
+            // 1. removing letters from version string
+            // 2. split version str in an array of version parts
+            // 3. cast this array to integer
         }
     }, context);
 }
