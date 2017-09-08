@@ -11,7 +11,7 @@ module.exports = function (context) {
             { name: 'version', typeName: 'text', title: 'versión', nullable: false},
             { name: 'cobertura', typeName: 'text', title: 'covertura' },
             { name: 'test_pass', typeName: 'boolean', title: 'pasan los test?' },
-            { name: 'mark_as_insec', typeName: 'boolean', title: 'marcado como inseguro?' },
+            { name: 'insecurity_level', typeName: 'text', title: 'nivel de inseguridad' },
         ],
         primaryKey: ['module', 'version'],
         foreignKeys: [
