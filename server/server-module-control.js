@@ -27,19 +27,23 @@ class AppModuleControl extends backendPlus.AppBackend{
     }
     getMenu(context){
         return {menu:[
-            {menuType:'menu', name:'modules', menuContent:[
+            {menuType:'menu', name:'modules', selectedByDefault:true, menuContent:[
+                {menuType:'table', name:'propiedad_modulos', label:'propiedad', selectedByDefault:true},
+                {menuType:'table', name:'grupo_modulos', label:'grupos'},
                 {menuType:'table', name:'modules', label:'modulos'},
                 {menuType:'table', name:'versions', label:'versiones'},
                 {menuType:'table', name:'dependences', label:'dependencias'},
             ]},
             {menuType:'menu', name:'configuración', menuContent:[
-                {menuType:'table', name:'usuarios'},
+                {menuType:'table', name:'usuarios', selectedByDefault:true},
             ]},
         ]}
     }
     getTables(){
         return super.getTables().concat([
             'usuarios',   
+            'propiedad_modulos',
+            'grupo_modulos',
             'modules',
             'versions',
             'dependences'

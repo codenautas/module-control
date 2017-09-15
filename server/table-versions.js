@@ -9,9 +9,9 @@ module.exports = function (context) {
         fields: [
             { name: 'module', typeName: 'text', title: 'Módulo', nullable: false },
             { name: 'version', typeName: 'text', title: 'versión', nullable: false},
-            { name: 'cobertura', typeName: 'text', title: 'covertura' },
-            { name: 'test_pass', typeName: 'boolean', title: 'pasan los test?' },
-            { name: 'insecurity_level', typeName: 'text', title: 'nivel de inseguridad' },
+            { name: 'cobertura', typeName: 'text',  },
+            { name: 'test_pass', typeName: 'boolean', title: 'tests' },
+            { name: 'insecurity_level', typeName: 'text', title: 'dependencias' },
         ],
         primaryKey: ['module', 'version'],
         foreignKeys: [

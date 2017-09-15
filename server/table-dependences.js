@@ -21,6 +21,9 @@ module.exports = function (context) {
         ],
         softForeignKeys: [
             { references: 'versions', fields: [{ source: 'dependence_module', target: 'module' }, { source: 'dependence_version', target: 'version' }]},
-        ]
+        ],
+        sql:{
+            orderBy: ['source_module','source_version','category', 'dependence_module']
+        }
     }, context);
 }

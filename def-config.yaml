@@ -12,6 +12,8 @@ install:
   dump:
     db:
       owner: modulecontrol_owner
+    scripts:
+      post-adapt: [para_ordenar_ten.fun.sql]
 login:
   table: usuarios
   userFieldName: usuario
