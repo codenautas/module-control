@@ -31,7 +31,7 @@ login:
       usernameLabel: usuario
       passwordLabel: clave
       buttonLabel: entrar
-      formImg: diclas-lock.png
+      formImg: img/login-lock-icon.png
     chPassForm:
       usernameLabel: usuario
       oldPasswordLabel: clave anterior
