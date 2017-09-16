@@ -12,7 +12,7 @@ module.exports = function(context){
             {name:'activo_hasta'    , typeName:'date'                   , editable:admin},
             {name:'bloqueado_desde' , typeName:'date'                   , editable:admin},
             {name:'rol'             , typeName:'text'                   , editable:admin},
-            {name:'clave_nueva'     , typeName:'text', clientSide:'newPass', allow:{select:admin, update:false, insert:false} },
+            {name:'clave_nueva'     , typeName:'text', clientSide:'newPass', editable:admin },
         ],
         primaryKey:['usuario']
     });
