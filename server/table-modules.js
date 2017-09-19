@@ -7,7 +7,7 @@ module.exports = function (context) {
         elementName: 'module',
         editable: admin,
         fields: [
-            { name: 'module', typeName: 'text', title: 'Módulo', nullable: false, sequence: { name: 'module' } },
+            { name: 'module', typeName: 'text', title: 'Módulo', nullable: false},
             { name: 'repo', typeName: 'text', title: 'repositorio' },
             { name: 'importance', typeName: 'integer', title: 'importancia' },
             { name: 'propio', typeName: 'boolean', title: 'propio', nullable:false },
@@ -27,13 +27,13 @@ module.exports = function (context) {
             isTable: true,
             from: `
                 (select * 
-                   from modules m, 
+                   from modules m left join 
                         lateral (select v.version, v.cobertura, v.test_pass, v.insecurity_level
                                    from versions v 
                                    where m.module = v.module 
                                    order by para_ordenar_ten(v.version) desc
                                    limit 1
-                                ) v
+                                ) v on true
                     order by m.module)`
             //  string_to_array(regexp_replace(v.version, '[a-zA-Z]', '', 'gi'), '.','')::int[]
             // 1. removing letters from version string
