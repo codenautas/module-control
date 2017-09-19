@@ -7,7 +7,7 @@ module.exports = function (context) {
         elementName: 'module',
         editable: admin,
         fields: [
-            { name: 'module', typeName: 'text', title: 'Módulo', nullable: false, sequence: { name: 'module' } },
+            { name: 'module', typeName: 'text', title: 'Módulo', nullable: false },
             { name: 'repo', typeName: 'text', title: 'repositorio' },
             { name: 'importance', typeName: 'integer', title: 'importancia' },
             { name: 'propio', typeName: 'boolean', title: 'propio', nullable:false },
