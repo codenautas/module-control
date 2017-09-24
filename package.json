@@ -1,7 +1,7 @@
 {
   "name": "module-control",
   "description": "App to control module dependencies",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "repository": "codenautas/module-control",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "index.js"
   ],
   "dependencies": {
-      "backend-plus": "~0.18.12"
+      "backend-plus": "~0.18.13"
   },
   "devDependencies": {
   },
