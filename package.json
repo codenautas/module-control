@@ -12,8 +12,7 @@
   "dependencies": {
       "backend-plus": "~0.18.13"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">= 4.0.0"
   },
